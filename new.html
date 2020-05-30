@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>My To-do list</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            
+            img{
+                margin-bottom: 10px;
+                height: 50px;
+                background-color: #abdd78;
+            }
+
+            h1{ 
+                font-family: "Times new roman";
+                background-color: #abdd78;
+            }
+
+            section{
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: #abdd78;
+            }
+            
+            #textBox{
+                height: 35px;
+                width: 30vw;
+                border: none;
+                margin: 20px;
+            }
+            
+            #buttonClicked{
+                height: 35px;
+                width: 100px;
+                background-color: #85ce3b;
+                border: none;
+                color: #fefefe;
+            }
+            
+            #thisList{
+                width: 50%;
+            }
+            
+            .content{
+                width: 100%;
+                padding: 10px;
+                margin: 25px;
+                background-color: #85ce3b;
+                text-align: center;
+                color: #fefefe;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <section>
+            <img src="list.png">
+            <h1 style="text-align: center;">To-do list</h1>
+            <div class="div1">
+                <input type="text" id="textBox" placeholder=" Enter anything">
+                <input type="button" id="buttonClicked" name="Click" value="Click" onclick="addFunc()">
+            </div>
+            <div id="thisList"></div>
+        </section>
+        <script>
+            function addFunc(){
+                if(textBox.value != ""){
+                    var some = document.createElement("div"), headLine = document.createElement("h2"), textNode = document.createTextNode(textBox.value);
+                    some.className = "content";
+                        thisList.appendChild(some);
+                            some.appendChild(headLine);
+                                headLine.appendChild(textNode);
+                                textBox.value = "";
+                    
+                }else{
+                    alert("Text box is empty!");
+                }
+                
+            }
+        </script>
+    </body>
+</html>
